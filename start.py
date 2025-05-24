@@ -8,7 +8,7 @@ pre = np.array(ImageGrab.grab())
 h = len(pre)
 w = len(pre[0])
 
-reader = easyocr.Reader(['en'], False)
+reader = easyocr.Reader(['en'], gpu=False)
 
 def drawing (f,r):   
        
@@ -33,8 +33,8 @@ while True:
    
     
 
-    imgShow = cv2.resize(img, (1000,1000))
-    cv2.imshow("cam", cv2.cvtColor(imgShow, cv2.COLOR_BGR2RGB))
+        imgShow = cv2.resize(img, (1000,1000))
+        cv2.imshow("cam", cv2.cvtColor(imgShow, cv2.COLOR_BGR2RGB))
 
     if cv2.waitKey(1) == ord('q'):
         break
